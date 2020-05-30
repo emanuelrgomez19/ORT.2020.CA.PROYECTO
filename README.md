@@ -3,7 +3,7 @@
 ### Grupo: 6  
 ### Aplicacion: Administrador de revistas  y suscripciones . 
 
-#### Alcance:El mismo contendra 
+#### Alcance: el mismo contendra 
 - ALTA, BAJA y MODIFICACION  de contactos.
 - ALTA, BAJA y MODIFICACION  de revistas.
 - ALTA BAJA y MODIFICACION de ediciones.
