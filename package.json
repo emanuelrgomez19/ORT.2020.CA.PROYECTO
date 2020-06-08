@@ -1,0 +1,19 @@
+{
+  "name": "ort.2020.ca.proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto \"Suscrptiro\u001b[1;6DS\u001b[1riptor de revistas\"\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D CA: \"Suscriptor de revistas\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO.git"
+  },
+  "author": "Emanuel Gómez - Nicolás Lulkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO/issues"
+  },
+  "homepage": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO#readme"
+}
