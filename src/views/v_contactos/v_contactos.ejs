@@ -12,25 +12,25 @@
         
                   <form action="addContacto" method="post">
                     <div class="form-group">
-                      <input class="form-control" type="text" name="nombre" placeholder="Nombre" required=true>
+                      <input class="form-control" type="text" name="nombre" placeholder="Nombre(*)" required=true>
                     </div>
                     <div class="form-group">
-                      <input class="form-control" type="text" name="apellido" placeholder="Last Name"required=true>
+                      <input class="form-control" type="text" name="apellido" placeholder="Apellido(*)"required=true>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="number" name="doc" placeholder="Passport"required=true>
+                        <input class="form-control" type="number" name="doc" placeholder="Documento(*)"required=true>
                       </div>
                       <div class="form-group">
-                        <input class="form-control" type="email" name="email" placeholder="Mail"required=true>
+                        <input class="form-control" type="email" name="mail" placeholder="Mail(*)"required=true>
                       </div>
                       <div class="form-group">
-                        <input class="form-control" type="email" name="emai2" placeholder="Mail Aux.">
+                        <input class="form-control" type="email" name="mai2" placeholder="Mail Aux.">
                       </div>
                       <div class="form-group">
-                        <input class="form-control" type="number" name="tel1" placeholder="Tel Mobile"required=true>
+                        <input class="form-control" type="number" name="tel1" placeholder="Celular(*)"required=true>
                       </div>
                       <div class="form-group">
-                        <input class="form-control" type="number" name="tel2" placeholder="Tel2">
+                        <input class="form-control" type="number" name="tel2" placeholder="Teléfono">
                       </div>
 
                     <button class="btn btn-primary " type="submit">
@@ -47,11 +47,11 @@
                  <tr>
                     <th>N°</th>
                     <th>Nombre</th>
-                    <th>Last Name</th>
+                    <th>Apellido</th>
                     <th>Mail</th>
-                    <th>Tel 1</th>
-                    <th>Tel 2</th>
-                    <th>Options</th>
+                    <th>Cel</th>
+                    <th>Tel</th>
+                    <th>Opciones</th>
           <!-- <th>Status</th> -->
                 </tr>
             </thead>
@@ -61,8 +61,8 @@
           <td><%= i + 1%></td>
           <td><strong><%= contactos[i].nombre %></strong></td>
           <td><%= contactos[i].apellido%></td>
-          <td><%= contactos[i].email%></td>
-          <td><%= contactos[i].tel1 %></td> 
+          <td><%= contactos[i].mail%></td>
+          <td><%= contactos[i].celular %></td> 
           <td><%= contactos[i].telefono %></td>  
           
           <td>
@@ -91,7 +91,7 @@
 <script>
     function confirmar()
     {
-        if(confirm("Estas seguro que quieres eliminar este contacto ?"))
+        if(confirm("Está seguro que quiere eliminar este contacto?"))
         {
             return true;
         }

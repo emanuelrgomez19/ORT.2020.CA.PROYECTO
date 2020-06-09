@@ -10,16 +10,16 @@
         <div class="card-body">
           <form action="../editar/<%= contactos._id %>" method="POST">
             <div class="form-group">
-              <input class="form-control" type="text" name="name"  value="<%= contactos.name %>">
+              <input class="form-control" type="text" name="nombre"  value="<%= contactos.nombre %>">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="last_name"  value="<%= contactos.last_name %>">
+                <input class="form-control" type="text" name="apellido"  value="<%= contactos.apellido %>">
               </div>
               <div class="form-group">
                 <input class="form-control" type="number" name="doc"  value="<%= contactos.doc %>">
               </div>
               <div class="form-group">
-                <input class="form-control" type="email" name="email"  value="<%= contactos.email  %>">
+                <input class="form-control" type="email" name="mail"  value="<%= contactos.mail  %>">
               </div>
             <button class="btn btn-primary" type="submit">
               Actualizar 
