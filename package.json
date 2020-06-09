@@ -4,6 +4,8 @@
   "description": "Proyecto \"Suscrptiro\u001b[1;6DS\u001b[1riptor de revistas\"\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D CA: \"Suscriptor de revistas\"",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO/issues"
   },
-  "homepage": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO#readme"
+  "homepage": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "nodemon": "^2.0.4"
+  }
 }
