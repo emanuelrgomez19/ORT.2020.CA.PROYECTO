@@ -3,6 +3,7 @@ const router = express.Router();
 const daoContacto = require('../dao/dao_contactos')
 
 router.get('/contactos', async (req, res) => {
+
   const contactos = await daoContacto.listarContactos() ;
   res.render('v_contactos/v_contactos', {
       contactos
@@ -30,10 +31,11 @@ router.get('/editar/:id',async(req,res)=>{
 });
 
 
-router.post('/editar/:id', async (req, res, next) => {
+router.post('/editar/:id', async (req, res) => {
   const { id } = req.params;
   daoContacto.actualizarContacto(id,req.body);
   res.redirect('/contactos');
 });
+
 
 module.exports = router;
