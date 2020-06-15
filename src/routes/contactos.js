@@ -3,7 +3,6 @@ const router = express.Router();
 const daoContacto = require('../dao/dao_contactos')
 
 router.get('/contactos', async (req, res) => {
-
   const contactos = await daoContacto.listarContactos() ;
   res.render('v_contactos/v_contactos', {
       contactos
