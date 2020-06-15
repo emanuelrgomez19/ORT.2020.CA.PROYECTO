@@ -17,6 +17,7 @@ mongoose.connect('mongodb://localhost/crud-mongo')
 // importing routes
 const indexRoutes = require('./routes/index');
 const contactosRoutes = require('./routes/contactos');
+const revistasRoutes = require('./routes/revistas');
 
 
 // settings
@@ -33,6 +34,7 @@ app.use(express.json());
 // routes
 app.use('/', indexRoutes);
 app.use('/', contactosRoutes);
+app.use('/', revistasRoutes);
 
 
 //Escuchando puerto 

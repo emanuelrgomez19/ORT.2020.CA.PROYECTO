@@ -10,7 +10,7 @@ router.get('/contactos', async (req, res) => {
   });
 });
 
-router.post('/addContacto',  (req, res, next) => {
+router.post('/contactos',  (req, res, next) => {
    daoContacto.guardarContacto(req.body)
   res.redirect('/contactos')
 });
