@@ -5,7 +5,7 @@ async function buscarContacto(id){
 
 }
 
-async function listarContactos(){
+ async function listarContactos(){
     return await modelContactos.find();
 }
 
