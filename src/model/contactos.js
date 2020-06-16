@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const ContactoSchema = Schema({
   nombre: String,
   apellido: String,
@@ -16,6 +15,5 @@ const ContactoSchema = Schema({
     default: true
   }
 });
-
 
 module.exports = mongoose.model('contactos', ContactoSchema);

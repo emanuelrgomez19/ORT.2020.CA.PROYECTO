@@ -1,26 +1,24 @@
-const modelContactos = require('../model/revistas')
+const modelRevistas = require('../model/revistas')
 
-function buscarRevista(id){
-    return modelContactos.findById(id);
-
+function buscarRevista(id) {
+    return modelRevistas.findById(id)
 }
 
-function listarRevistas(){
-    return modelContactos.find();
+function listarRevistas() {
+    return modelRevistas.find()
 }
 
-async function actualizarRevista(id,dato){
-    await modelContactos.update({_id:id},dato)
+async function actualizarRevista(id, dato) {
+    await modelRevistas.update({ _id: id }, dato)
 }
 
-function guardarRevista(dato){
-    var contacto= new modelContactos(dato) 
-    contacto.save();
+function guardarRevista(dato) {
+    var revista = new modelRevistas(dato)
+    revista.save();
 }
 
-async function  borrarRevista(id){
-  await  modelContactos.remove({_id:id});
-
+async function borrarRevista(id) {
+    await modelRevistas.remove({ _id: id });
 }
 
 module.exports = {
