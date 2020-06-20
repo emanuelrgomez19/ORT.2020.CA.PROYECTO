@@ -72,7 +72,10 @@
             <a href="/verRevistas/<%= contactos[i]._id %>" class="btn btn-primary">
               Ver 
             </a>
-            <a href="/editar/<%= contactos[i]._id %>" class="btn btn-info">
+              <!-- <form action="https://google.com">
+                <input type="submit" value="Go to Google" />
+              </form> -->
+            <a action="contactos" method="put">
               Editar 
             </a>
           </a>
@@ -98,3 +101,7 @@
         return false;
     }
 </script>
+
+
+
+
