@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const daoContacto = require('../dao/dao_contactos')
+const daoContacto = require("../dao/dao_contactos");
 
 router.get('/contactos', async (req, res) => {
   res.json(await daoContacto.listarContactos())
