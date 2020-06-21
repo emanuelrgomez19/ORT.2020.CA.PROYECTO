@@ -1,19 +1,19 @@
 const modelRevistas = require('../model/revistas')
 
-function buscarRevista(id) {
-    return modelRevistas.findById(id)
+async function buscarRevista(id) {
+    return await modelRevistas.findById(id)
 }
 
-function listarRevistas() {
-    return modelRevistas.find()
+async function listarRevistas() {
+    return await modelRevistas.find()
 }
 
 async function actualizarRevista(id, dato) {
     await modelRevistas.update({ _id: id }, dato)
 }
 
-function guardarRevista(dato) {
-    var revista = new modelRevistas(dato)
+async function guardarRevista(dato) {
+    var revista = await new modelRevistas(dato)
     revista.save();
 }
 
