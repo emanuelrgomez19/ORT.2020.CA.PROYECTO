@@ -19,8 +19,13 @@
   },
   "homepage": "https://github.com/emanuelrgomez19/ORT.2020.CA.PROYECTO#readme",
   "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "@hapi/joi-date": "^2.0.1",
+    "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
+    "joi-date-extensions": "^1.2.0",
     "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   }
 }

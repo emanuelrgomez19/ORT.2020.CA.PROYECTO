@@ -4,7 +4,7 @@ const edicionSchema = new Schema;
 
 const RevistaSchema = Schema({
   nombre: String,
-  description: String,
+  descripcion: String,
   edicion: [edicionSchema],
   status: {
     type: Boolean,
