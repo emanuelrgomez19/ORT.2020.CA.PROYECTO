@@ -61,6 +61,48 @@ router.delete('/contactos/:id', async (req, res) => {
   }
 });
 
+
+// AGREGAR REVISTA AL CONTACTO
+
+router.post('/agrearRevista/:idContacto&:idRevista',
+async (req, res) => {
+
+  var existeRevista = false
+  const contactoID = req.params.idContacto;
+  const revistaID = req.params.idRevista;
+  const contactos = await daoContacto.buscarContacto(contactoID);
+  console.log(contactos.revistas)
+  arrayRevistas = contactos.revistas;
+  for (let i = 0; i < arrayRevistas.length; i++) {
+    if (revistaID == arrayRevistas[i]){
+        existeRevista = true
+        console.log(arrayRevistas[i])
+    };
+  }
+  if (existeRevista) {
+    const rta = {message: 'El contacto ya tiene esa revista' }
+    res.json(rta)
+  }else{
+  arrayRevistas.push(revistaID);
+  contactos.revistas = arrayRevistas;
+  await daoContacto.actualizarContacto(contactoID, contactos);
+  const rta = {message: 'Se agrego revista al contacto  ' + req.params.id}
+  res.json(rta)
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
 
 function validaContacto(nuevoContacto) {
