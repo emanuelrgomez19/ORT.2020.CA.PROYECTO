@@ -69,8 +69,7 @@ module.exports = router;
 function validaRevista(nuevaRevista) {
   const schema = {
     nombre: Joi.string().required(),
-    descripcion: Joi.string().required(),
-    nombre: Joi.string().required(),
+    descripcion: Joi.string().required()
   }
   const error = Joi.validate(nuevaRevista, schema, function (err) {
     if (err)

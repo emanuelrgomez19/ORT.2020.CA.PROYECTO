@@ -72,7 +72,7 @@ function validaContacto(nuevoContacto) {
     mail2: Joi.string(),
     celular: Joi.number().integer().min(1500000000).max(1599999999),
     telefono: Joi.number().integer().min(40000000).max(49999999),
-    description: Joi.string()
+    descripcion: Joi.string()
   }
   const error = Joi.validate(nuevoContacto, schema, function (err) {
     if (err)
