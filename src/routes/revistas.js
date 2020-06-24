@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const daoRevista = require('../dao/dao_revistas')
 const Joi = require('@hapi/joi');
-// const Revistas = require('../model/revistas');
 
 router.get('/revistas', async (req, res) => {
   let response = {revistas: await daoRevista.listarRevistas() }
@@ -69,8 +68,7 @@ module.exports = router;
 function validaRevista(nuevaRevista) {
   const schema = {
     nombre: Joi.string().required(),
-    descripcion: Joi.string().required(),
-    nombre: Joi.string().required(),
+    descripcion: Joi.string().required()
   }
   const error = Joi.validate(nuevaRevista, schema, function (err) {
     if (err)

@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const Joi = require('@hapi/joi');
-// const { required } = require('@hapi/joi');
-
 
 const ContactoSchema = Schema({
-  // nombre: {type: String, required},
   nombre: String,
   apellido: String,
   doc: Number,
@@ -19,6 +15,5 @@ const ContactoSchema = Schema({
     default: true
   }
 });
-
 
 module.exports = mongoose.model('contactos', ContactoSchema);

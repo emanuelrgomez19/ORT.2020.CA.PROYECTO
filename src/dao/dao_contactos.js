@@ -12,8 +12,8 @@ async function actualizarContacto(id, dato) {
     await modelContactos.update({ _id: id }, dato)
 }
 
-async function guardarContacto(dato) {
-    var contacto = await new modelContactos(dato)
+function guardarContacto(dato) {
+    var contacto = new modelContactos(dato)
     contacto.save();
 }
 
