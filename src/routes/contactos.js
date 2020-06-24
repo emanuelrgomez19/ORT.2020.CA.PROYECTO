@@ -4,7 +4,7 @@ const daoContacto = require("../dao/dao_contactos");
 const Joi = require('@hapi/joi');
 
 router.get('/contactos', async (req, res) => {
-  let response = {contactos: await daoContacto.listarContactos() }
+  let response = { contactos: await daoContacto.listarContactos() }
   res.status(200).json(response)
 });
 
@@ -64,32 +64,36 @@ router.delete('/contactos/:id', async (req, res) => {
 
 // AGREGAR REVISTA AL CONTACTO
 
-router.post('/agrearRevista/:idContacto&:idRevista',
-async (req, res) => {
-
-  var existeRevista = false
-  const contactoID = req.params.idContacto;
-  const revistaID = req.params.idRevista;
-  const contactos = await daoContacto.buscarContacto(contactoID);
-  console.log(contactos.revistas)
-  arrayRevistas = contactos.revistas;
-  for (let i = 0; i < arrayRevistas.length; i++) {
-    if (revistaID == arrayRevistas[i]){
-        existeRevista = true
-        console.log(arrayRevistas[i])
-    };
-  }
-  if (existeRevista) {
-    const rta = {message: 'El contacto ya tiene esa revista' }
-    res.json(rta)
-  }else{
-  arrayRevistas.push(revistaID);
-  contactos.revistas = arrayRevistas;
-  await daoContacto.actualizarContacto(contactoID, contactos);
-  const rta = {message: 'Se agrego revista al contacto  ' + req.params.id}
-  res.json(rta)
-  }
-});
+router.post('/contactos/:idContacto&:idRevista', async (req, res) => {
+    const contactoID = req.params.idContacto;
+    const contactos = await daoContacto.buscarContacto(contactoID);
+    if (contactos) {
+      var existeRevista = false
+      const revistaID = req.params.idRevista;
+      // const contactos = await daoContacto.buscarContacto(contactoID);
+      // console.log(contactos.revistas)
+      arrayRevistas = contactos.revistas;
+      for (let i = 0; i < arrayRevistas.length; i++) {
+        if (revistaID == arrayRevistas[i]) {
+          existeRevista = true
+          // console.log(arrayRevistas[i])
+        };
+      }
+      if (existeRevista) {
+        const rta = { message: 'El contacto ya tiene esa revista' }
+        res.json(rta)
+      } else {
+        arrayRevistas.push(revistaID);
+        contactos.revistas = arrayRevistas;
+        await daoContacto.actualizarContacto(contactoID, contactos);
+        const rta = { message: 'Se agrego revista al contacto  ' + req.params.idContacto }
+        res.json(rta)
+      }
+    } else {
+      response = { message: 'El id del contacto no existe' }
+      res.status(400).json(response)
+    }
+  });
 
 
 
