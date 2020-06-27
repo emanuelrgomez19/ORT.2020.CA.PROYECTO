@@ -69,9 +69,20 @@ router.put('/ediciones/:id', async (req, res) => {
     response = { message: 'El id de la revista no existe' }
     res.status(400).json(response)
   }
-})
+});
 
-
+router.delete('/ediciones/:id', async (req, res) => {
+  var response
+  var edicionesEliminada = await daoEdiciones.buscarEdiciones(req.params.id)
+  if (edicionesEliminada) {
+    await daoEdiciones.borrarEdiciones(req.params.id);
+    response = {message: 'Se eliminó la edicion con id ' + req.params.id, datosEliminados: edicionesEliminada}
+    res.status(200).json(response)
+  } else {
+    response = { message: 'El id de la edicion no existe' }
+    res.status(400).json(response)
+  }
+});
 
 
 
