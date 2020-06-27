@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
-const RevistaSchema = Schema({
-  nombre: String,
+const EdicioneSchema = Schema({
+  titulo: String,
+  precio: Number,
   descripcion: String,
-  edicion: [],
   status: {
     type: Boolean,
     default: true
   }
 });
 
-module.exports = mongoose.model('revistas', RevistaSchema);
+module.exports = mongoose.model('ediciones', EdicioneSchema);
