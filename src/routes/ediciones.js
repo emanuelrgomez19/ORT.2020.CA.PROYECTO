@@ -53,20 +53,20 @@ router.put('/ediciones/:id', async (req, res) => {
     let resultado_validacion = await validarEdicion(req.body)
     if (resultado_validacion) {
       response = {
-        message: 'La revista posee un formato JSON inválido o faltan datos',
+        message: 'La edición posee un formato JSON inválido o faltan datos',
         motivo: resultado_validacion, datos: req.body
       }
       res.status(400).json(response)
     } else {
       await daoEdiciones.actualizarEdiciones(req.params.id, req.body)
       response = {
-        message: 'Se actualizó la revista con id ' + req.params.id
+        message: 'Se actualizó la edición con id ' + req.params.id
         , datosAntiguos: edicionVieja, datosActualizados: req.body
       }
       res.status(200).json(response)
     }
   } else {
-    response = { message: 'El id de la revista no existe' }
+    response = { message: 'El id de la edición no existe' }
     res.status(400).json(response)
   }
 });

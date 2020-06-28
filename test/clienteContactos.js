@@ -2,7 +2,7 @@ const request = require('request-promise-native')
 
 const apiPath = '/contactos'
 
-async function get(serverPath){
+async function listarContactos(serverPath){
     const options = {
         method: 'GET',
         uri: serverPath + apiPath,
@@ -11,7 +11,7 @@ async function get(serverPath){
     return await request(options)
 }
 
-async function post(serverPath, contacto){
+async function grabarNuevoContacto(serverPath, contacto){
     const options = {
         method: 'POST',
         uri: serverPath + apiPath,
@@ -21,7 +21,7 @@ async function post(serverPath, contacto){
     return await request(options)
 }
 
-async function postRevista(serverPath, idContacto, idRevista){
+async function suscribirARevista(serverPath, idContacto, idRevista){
     const options = {
         method: 'POST',
         uri: serverPath + apiPath + '/' + idContacto + '&' + idRevista,
@@ -30,7 +30,7 @@ async function postRevista(serverPath, idContacto, idRevista){
     return await request(options)
 }
 
-async function put(serverPath, idContacto, contacto){
+async function modificarContacto(serverPath, idContacto, contacto){
     const options = {
         method: 'PUT',
         uri: serverPath + apiPath + '/' + idContacto,
@@ -40,7 +40,7 @@ async function put(serverPath, idContacto, contacto){
     return await request(options)
 }
 
-async function dilit(serverPath, idContacto){
+async function eliminarContacto(serverPath, idContacto){
     const options = {
         method: 'DELETE',
         uri: serverPath + apiPath + '/' + idContacto,
@@ -49,4 +49,4 @@ async function dilit(serverPath, idContacto){
     return await request(options)
 }
 
-module.exports = {get,post,postRevista,put,dilit}
+module.exports = {listarContactos,grabarNuevoContacto,suscribirARevista,modificarContacto,eliminarContacto}

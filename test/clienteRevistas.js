@@ -2,7 +2,7 @@ const request = require('request-promise-native')
 
 const apiPath = '/revistas'
 
-async function get(serverPath){
+async function listarRevistas(serverPath){
     const options = {
         method: 'GET',
         uri: serverPath + apiPath,
@@ -11,7 +11,7 @@ async function get(serverPath){
     return await request(options)
 }
 
-async function post(serverPath, revista){
+async function grabarNuevaRevista(serverPath, revista){
     const options = {
         method: 'POST',
         uri: serverPath + apiPath,
@@ -21,7 +21,7 @@ async function post(serverPath, revista){
     return await request(options)
 }
 
-async function put(serverPath, idRevista, revista){
+async function modificarRevista(serverPath, idRevista, revista){
     const options = {
         method: 'PUT',
         uri: serverPath + apiPath + '/' + idRevista,
@@ -31,7 +31,7 @@ async function put(serverPath, idRevista, revista){
     return await request(options)
 }
 
-async function dilit(serverPath, idRevista){
+async function eliminarRevista(serverPath, idRevista){
     const options = {
         method: 'DELETE',
         uri: serverPath + apiPath + '/' + idRevista,
@@ -40,4 +40,4 @@ async function dilit(serverPath, idRevista){
     return await request(options)
 }
 
-module.exports = {get,post,put,dilit}
+module.exports = {listarRevistas,grabarNuevaRevista,modificarRevista,eliminarRevista}
