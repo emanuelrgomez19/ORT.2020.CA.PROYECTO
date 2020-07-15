@@ -21,10 +21,17 @@ async function borrarContacto(id) {
     await modelContactos.remove({ _id: id });
 }
 
+async function buscarUltimoContactoCreado() {
+
+   modelContactos.sort({$natural:-1}).limit(1);
+    
+}
+
 module.exports = {
     buscarContacto,
     listarContactos,
     actualizarContacto,
     guardarContacto,
-    borrarContacto
+    borrarContacto,
+    buscarUltimoContactoCreado
 };

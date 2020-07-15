@@ -1,4 +1,5 @@
 const clienteContactos = require('./clienteContactos.js')
+const daoContacto = require("../src/dao/dao_contactos");
 
 const serverPath = 'http://localhost:3000'
 
@@ -106,8 +107,11 @@ async function testDeleteContactoOk(serverPath) {
     } catch (err) {
         return response['status']=400
     }
+  
 }
 
+
+daoContacto.buscarUltimoContactoCreado
 // testGetContacto(serverPath)
 // testPostContactoError(serverPath)
 // testPostContactoOk(serverPath)
